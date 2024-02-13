@@ -1,13 +1,15 @@
 export default function Main(){
   return (
-    <div id="container-wrap" className="flex-col h-full text-5xl ">
-      <div className="relative
+    <div id="container-wrap" className="flex-col h-full text-5xl">
+      <div
+        className="relative
         flex flex-col-reverse justify-items-end
-        items-center min-h-96 h-3/4 bg-gray-800 text-gray-200
-      ">
-        <div className=" shadow-2xl absolute
-          overflow-visible w-4/5 h-52 -bottom-24
-          bg-gray-100 text-gray-600 rounded-xl
+        items-center bg-[#212121]"
+        style={{height: 724}}
+      >
+        <div className="shadow-xl absolute
+          overflow-visible w-11/12 h-60 -bottom-36
+          bg-white text-gray-950 rounded-xl z-0
         ">
           box
         </div>
