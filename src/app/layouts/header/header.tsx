@@ -1,26 +1,35 @@
 'use client'
-import Logo from "@/app/shared/logo";
-import Link from "next/link";
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import Link, {LinkProps} from "next/link";
+import React, {FC} from 'react'
 import {ReactNode, useState, useEffect} from "react";
 
-type NavLinkProps = {
-  name: string
-  href: string
-  icon?: ReactNode | string
+type linkListProps = {
+  name?: string
+  href: string | URL
+  icon?: string | ReactNode
 }
 
-const NavLink: NavLinkProps[] = [
+const HeaderLink : linkListProps[] = [
   {name: 'Home', href: '/'},
   {name: 'About Us', href: '/about_us'},
   {name: 'Contact Us', href: '/contact_us'},
   {name: 'Docs', href: '/docs'},
 ]
 
-function NavItem({NavLink}: {NavLink:NavLinkProps[]}) {
+const SNSLink: linkListProps[] = [
+  {icon: <TwitterIcon fontSize="small" />, href: 'https://twitter.com'},
+  {icon: <FacebookRoundedIcon fontSize="small" />, href: 'https://facebook.com'},
+  {icon: <InstagramIcon fontSize="small" />, href: 'https://instagram.com'}
+]
+
+function LinkItem({linkList}: {linkList:linkListProps[]}) {
   return (
-    NavLink.map((link:NavLinkProps) => {
+    linkList.map((link:linkListProps) => {
       return(
-        <li key={link.name} className="mx-2">
+        <li key={link.name} className="mx-3 mt-1">
           {link.icon}
           <Link href={link.href}>
               {link.name}
@@ -33,28 +42,30 @@ function NavItem({NavLink}: {NavLink:NavLinkProps[]}) {
 
 export default function Header(){
   // const [isScroll, setIsScroll] = useState(false)
-  const [test, setTest] = useState(window.scrollY)
 
 
   return (
     <div className="
       flex justify-between items-center bg-[#212121]
       w-screen h-16 text-gray-200"
-      onClick={() => test}
     >
-      <div className="ml-7">
-        <Link href="/public" className="text-sm pl-8">Material Tailwind</Link>
+      <div className="ml-8">
+        <Link href="https://www.material-tailwind.com/" className="text-sm pl-8">Material Tailwind</Link>
       </div>
       <div className="flex w-1/3 h-full justify-center items-center">
-        <ul className="flex justify-around items-center text-xs">
-          <NavItem NavLink={NavLink}/>
+        <ul className="flex justify-around items-center text-xs ml-5 pl-4">
+          <LinkItem linkList={HeaderLink} />
         </ul>
       </div>
       <div className="flex justify-end items-center">
-        <div className="mx-4 text-sm">
-          Menu
+        <div className="mr-8 pr-8 flex list-none">
+          <LinkItem linkList={SNSLink} />
+          <div className="rounded-lg bg-white text-black">
+            <Link href="https://www.material-tailwind.com/blocks">
+              BLOCKS
+            </Link>
+          </div>
         </div>
-        <Logo />
       </div>
     </div>
   )
