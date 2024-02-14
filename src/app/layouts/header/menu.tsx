@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, {useEffect} from "react";
 
 const MenuLink = [
   {name: 'Home', href: '/', target: '_blank'},
@@ -9,12 +9,17 @@ const MenuLink = [
 ]
 
 export default function Menu(){
+  useEffect(() => {
+    console.log('Menu', window.innerWidth)
+  },[])
   return (
-    <div>
-      <ul className="
+    <div className={`
+      hidden lg:block
+    `}>
+      <ul className={`
         flex justify-between min-w-64
         w-80 ml-32 mr-4 py-4 px-4
-      ">
+      `}>
         {MenuLink.map((link) => {
           return (
             <Link

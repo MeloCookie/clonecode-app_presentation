@@ -7,7 +7,7 @@ import {Container} from "@/app/components/container";
 
 export default function Main(){
   return (
-    <div className="h-full antialiased">
+    <div className="w-screen antialiased">
       <div className="
         relative text-white bg-[#212121]
         p-16 flex flex-col justify-end mb-40
@@ -79,10 +79,11 @@ export default function Main(){
               </ul>
             </div>
           </div>
-          <div className="absolute right-24 top-14 z-50 mb-48">
+          <div className="absolute right-24 top-14 mb-48">
             <Image
               src={iphone} alt="iphone image"
               width="470" height="640"
+              className="z-30"
             />
           </div>
         </div>

@@ -1,7 +1,8 @@
+'use client'
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import React from "react";
+import React, {PropsWithChildren, useEffect} from "react";
 import Link from "next/link";
 import {FC} from 'react'
 import {HeaderProps} from "@/app/layouts/header/header";
@@ -15,12 +16,15 @@ const SNSList = [
     target: '_blank', icon: <InstagramIcon fontSize="small"/>},
 ]
 
-const  SNSLink: FC<HeaderProps> = ({isChange}) => {
+const  SNSLink: FC<PropsWithChildren<HeaderProps>> = ({isChange, children}) => {
+  useEffect(() => {
+    console.log('SNSLink', window.innerWidth)
+  },[])
   return (
-    <div>
-      <ul className="
+    <div className="">
+      <ul className={`
             flex justify-around items-center h-full w-52
-          ">
+          `}>
         {
           SNSList.map((link) => {
             return (
@@ -33,13 +37,7 @@ const  SNSLink: FC<HeaderProps> = ({isChange}) => {
             )
           })
         }
-        <span className={`font-semibold
-          h-8 w-20 text-xs bg-white text-black
-          rounded-lg flex justify-center items-center
-          ${isChange ? "bg-black text-white" : ""}
-        `}>
-          BLOCKS
-        </span>
+        {children}
       </ul>
     </div>
   )

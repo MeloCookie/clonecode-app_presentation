@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from "next/image";
 import icon from '@/asset/logo.png'
+
 export default function FixedButton(){
   return (
     <div className=" antialiased bg-white fixed
@@ -10,7 +11,7 @@ export default function FixedButton(){
     ">
       <Link
         href="https://www.material-tailwind.com/"
-        className="flex justify-around items-center h-full"
+        className="flex justify-around items-center h-full z-50"
         target="_blank"
       >
         <Image

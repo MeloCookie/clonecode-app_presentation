@@ -7,10 +7,6 @@ children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const scrollCallback = (event: React.UIEvent) => {
-    console.log(event.currentTarget?.scrollTop)
-    return event.currentTarget?.scrollTop
-  };
   const [isChange,setChange] = useState(false)
   const handleScroll = (event: React.UIEvent) => {
     if (event.currentTarget.scrollTop > 0){
