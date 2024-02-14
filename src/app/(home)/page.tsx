@@ -3,16 +3,17 @@ import google from '@/asset/logo-google.png'
 import iphone from '@/asset/iphones.png'
 import Link from "next/link";
 import Image from "next/image";
+import {Container} from "@/app/components/container";
+
 export default function Main(){
   return (
     <div className="h-full antialiased">
       <div className="
         relative text-white bg-[#212121]
-        p-16 flex flex-col justify-end
+        p-16 flex flex-col justify-end mb-40
         "
          style={{height: "720px"}}
       >
-        {/*아래 있는 mb-24는 나중에 수정 필요*/}
         {/*상단 화면 두개 컨테이너*/}
         <div className="
           flex justify-between text-black
@@ -41,7 +42,7 @@ export default function Main(){
               <ul
                 className="
                 mt-3 pt-2 ml-1 text-black h-16
-                text-sm antialiased font-semibold
+                text-sm font-semibold
                 flex"
                 style={{fontSize: "13px"}}
               >
@@ -110,9 +111,50 @@ export default function Main(){
           </p>
         </div>
       </div>
-      <div className="mt-40">
-        Hello!
+      <div className="
+        mt-28 mx-14 h-2/3 px-16
+        flex justify-center items-center
+      ">
+        <div className="
+          w-11/12 h-4/5 bg-black rounded-2xl flex
+          text-center text-white
+          justify-center items-center text-5xl
+        ">
+          iframe
+        </div>
       </div>
+      <Container className="items-start
+        h-full border-4 text-center text-5xl m-8 p-4
+        flex-wrap
+        ">
+        <div className="h-full w-full">
+          <div className="basis-full border-4">
+            Head!
+          </div>
+          <div className="
+            flex flex-wrap w-full justify-around
+            items-center
+          ">
+            <div className="basis-5/12 border-4 text-4xl">
+              HI1234
+            </div>
+            <div className="basis-5/12 border-4 text-4xl">
+              HI1234
+            </div>
+            <div className="basis-5/12 border-4 text-4xl">
+              HI1234
+            </div>
+            <div className="basis-5/12 border-4 text-4xl">
+              HI1234
+            </div>
+          </div>
+        </div>
+      </Container>
+      <Container className="
+        text-5xl border-4 p-8 m-8
+      ">
+        Hello
+      </Container>
     </div>
   )
 }

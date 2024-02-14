@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#212121]">
       <head>
         <meta charSet="UTF-8" />
         <title>NextJs Clone coding</title>
