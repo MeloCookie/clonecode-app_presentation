@@ -10,17 +10,17 @@ export default function Main(){
     <div className="w-screen antialiased">
       <div className="
         relative text-white bg-[#212121]
-        p-16 flex flex-col justify-end mb-40
+        px-16 pt-32 flex flex-col justify-center items-center mb-40
         "
          style={{height: "720px"}}
       >
         {/*상단 화면 두개 컨테이너*/}
         <div className="
-          flex justify-between text-black
-          mb-24 h-96
+          flex flex-wrap justify-between
+          text-black mb-24 h-96 w-full
         ">
           <div className="
-            flex flex-col justify-start
+            flex flex-col justify-center
             m-4 p-2 pt-6 text-white
           ">
             <h1
@@ -79,7 +79,7 @@ export default function Main(){
               </ul>
             </div>
           </div>
-          <div className="absolute right-24 top-14 mb-48">
+          <div className="flex justify-center items-center h-96 ">
             <Image
               src={iphone} alt="iphone image"
               width="470" height="640"

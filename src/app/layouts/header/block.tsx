@@ -1,7 +1,8 @@
 import React, {FC} from 'react'
-import {HeaderProps} from "@/app/layouts/header/header";
-const Block: FC<HeaderProps> = ({isChange}) => {
+import {ChangeProps} from "@/app/layouts/header/header";
 
+//component for snslink.tsx
+const Block: FC<ChangeProps> = ({isChange}) => {
   return (
     <div className={`
           h-8 w-20 text-xs font-base

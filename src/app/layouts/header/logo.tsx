@@ -6,7 +6,7 @@ export default function Logo(){
     <Link
       href="https://www.material-tailwind.com/"
       target="_blank"
-      className="p-2"
+      className="p-2 min-w-32"
     >
       Material Tailwind
     </Link>

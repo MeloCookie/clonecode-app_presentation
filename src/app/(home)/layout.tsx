@@ -2,6 +2,7 @@
 import Header from "@/app/layouts/header/header";
 import FixedButton from "@/app/layouts/fixedButton";
 import React, {useEffect, useState} from 'react'
+import {useMediaQuery} from "react-responsive";
 export default function RootLayout({
 children,
 }: Readonly<{

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, {useEffect} from "react";
 
-const MenuLink = [
+export const MenuList = [
   {name: 'Home', href: '/', target: '_blank'},
   {name: 'About Us', href: '/aboutus', target: '_blank'},
   {name: 'Contact Us', href: '/contactus', target: '_blank'},
@@ -9,29 +9,22 @@ const MenuLink = [
 ]
 
 export default function Menu(){
-  useEffect(() => {
-    console.log('Menu', window.innerWidth)
-  },[])
   return (
-    <div className={`
-      hidden lg:block
+    <ul className={`
+      flex justify-between min-w-64
+      w-80 ml-32 mr-4 py-4 px-2
     `}>
-      <ul className={`
-        flex justify-between min-w-64
-        w-80 ml-32 mr-4 py-4 px-4
-      `}>
-        {MenuLink.map((link) => {
-          return (
-            <Link
-              key={link.name} href={link.href}
-              className="flex-grow p-2"
-              target={link.target}
-            >
-              <p>{link.name}</p>
-            </Link>
-          )
-        })}
-      </ul>
-    </div>
+      {MenuList.map((link) => {
+        return (
+          <Link
+            key={link.name} href={link.href}
+            className="flex-grow p-2 min-w-8"
+            target={link.target}
+          >
+            <p>{link.name}</p>
+          </Link>
+        )
+      })}
+    </ul>
   )
 }
